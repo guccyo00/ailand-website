@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>採用情報 | 合同会社 愛らんど</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .feature-badge {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #eee;
+        }
+        .feature-badge span { font-size: 0.7rem; color: var(--accent-red); font-weight: bold; }
+        .feature-badge strong { font-size: 1.5rem; color: var(--accent-red); line-height: 1; }
+        
+        .feature-content {
+            padding: 3rem 1.5rem 1rem;
+        }
+        .feature-content h3 {
+            color: var(--accent-red);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .feature-content p {
+            font-size: 0.95rem;
+            color: #555;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .job-label {
+            background: var(--accent-red);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            width: 160px; /* Increased width */
+            text-align: center;
+            flex-shrink: 0;
+            white-space: nowrap; /* Ensure one line */
+            display: inline-block;
+        }
+
+        .job-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .job-table tr {
+            border-bottom: 1px solid #f2efe6;
+        }
+        .job-table th {
+            width: 250px;
+            text-align: left;
+            padding: 1.2rem;
+            background-color: #fff5f7;
+            color: #444;
+            font-weight: bold;
+        }
+        .job-table td {
+            padding: 1.2rem;
+            color: #555;
+        }
+        @media (max-width: 768px) {
+            .job-table th { width: 100px; font-size: 0.9rem; padding: 0.8rem; }
+            .job-table td { font-size: 0.9rem; padding: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-section">
+                <i class="fa-solid fa-rainbow" style="color: var(--accent-red); margin-right: 10px;"></i>
+                合同会社 愛らんど
+            </a>
+            <nav class="nav-section">
+                <ul>
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="about.html">愛らんどについて</a></li>
+                    <li><a href="homenurse.html">訪問看護</a></li>
+                    <li><a href="care.html">訪問介護</a></li>
+                    <li><a href="senior.html">老人ホーム</a></li>
+                    <li><a href="recruit.html" style="color: var(--accent-red);">採用情報</a></li>
+                </ul>
+            </nav>
+            <div class="header-ctas">
+                <a href="tel:0980437117" class="cta-block tel">
+                    <span>お電話でのお問い合わせ</span>
+                    <strong>0980-43-7117</strong>
+                </a>
+                <a href="https://www.ailand.okinawa/#contact" class="cta-block contact" target="_blank">
+                    <span>メールでのお問い合わせ</span>
+                    <strong>CONTACT</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="padding-top: 180px;">
+        <div class="container" style="max-width: 1000px; margin: 0 auto;">
+            <div class="section-title">
+                <h2>採用情報</h2>
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-weight: bold; font-size: 1.3rem; color: var(--accent-red);">
+                あなたの経験とやさしさで、地域に安心と笑顔を届けませんか？
+            </p>
+        </div>
+    </section>
+
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px 100px;">
+        <!-- 特徴 -->
+        <div class="feature-grid">
+            <div class="feature-card">
+                <img src="images/recruit_01.jpg" alt="特徴1">
+                <div class="feature-badge">
+                    <span>FEATURE</span>
+                    <strong>01</strong>
+                </div>
+                <div class="feature-content">
+                    <h3>自分の生活に合わせた働き方</h3>
+                    <p>土日休み、半日勤務など、働き方の融通が利くため、自分のライフスタイルに合わせて働けます。子育てや家庭との両立を目指す方も歓迎しています。</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img src="images/recruit_02.jpg" alt="特徴2">
+                <div class="feature-badge">
+                    <span>FEATURE</span>
+                    <strong>02</strong>
+                </div>
+                <div class="feature-content">
+                    <h3>幅広い年齢層が活躍中</h3>
+                    <p>若い世代からベテランまで、幅広い年齢層のスタッフが活躍しています。経験豊富なスタッフのサポートもあり、未経験の方も安心して働ける環境です。</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img src="images/recruit_03.jpg" alt="特徴3">
+                <div class="feature-badge">
+                    <span>FEATURE</span>
+                    <strong>03</strong>
+                </div>
+                <div class="feature-content">
+                    <h3>資格保有者を優遇・大歓迎</h3>
+                    <p>看護師資格をお持ちの方を優遇いたします。資格を活かして地域医療に貢献したい方、大歓迎です。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blob-card">
+            <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                <h2 style="font-size: 1.5rem; border-left: 5px solid var(--accent-red); padding-left: 15px; background: none;"><span style="color: var(--accent-red);">仕</span>事内容</h2>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem;">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span class="job-label">訪問看護業務</span>
+                    <span>利用者様のご自宅に伺い、健康管理や医療処置、日常生活のケアを行います。</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span class="job-label">地域連携</span>
+                    <span>主治医と連携し、利用者様が安心して在宅療養を続けられるよう支援します。</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span class="job-label">緊急対応</span>
+                    <span>夜間緊急対応が月に数回あります。携帯電話を保持していただくだけで <strong style="background: linear-gradient(transparent 70%, #fff9c4 70%);">3,000円</strong> の手当が支給されます。</span>
+                </div>
+            </div>
+
+            <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                <h2 style="font-size: 1.5rem; border-left: 5px solid var(--accent-red); padding-left: 15px; background: none;"><span style="color: var(--accent-red);">こ</span>んな方を求めています</h2>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                    <div style="background: var(--accent-red); color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-weight: 900; flex-shrink: 0;">1</div>
+                    <div>
+                        <h4 style="font-size: 1.2rem; color: var(--accent-red); margin-bottom: 0.5rem;">明るく健康で、利用者様との関わりを楽しめる方</h4>
+                        <p>利用者様としっかり向き合い、心の通うケアを提供できる方をお待ちしています。</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                    <div style="background: var(--accent-red); color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-weight: 900; flex-shrink: 0;">2</div>
+                    <div>
+                        <h4 style="font-size: 1.2rem; color: var(--accent-red); margin-bottom: 0.5rem;">看護師資格をお持ちの方</h4>
+                        <p>資格や経験を活かして、地域の皆さまの健康を支えたいという意欲がある方を歓迎いたします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 募集要項 -->
+        <div class="section-title" style="margin-top: 5rem;">
+            <p style="color: var(--accent-red); font-weight: 900; font-size: 1.5rem;">Guidelines</p>
+            <h2>募集要項</h2>
+        </div>
+        <div class="blob-card">
+            <table class="job-table">
+                <tr>
+                    <th>募集職種</th>
+                    <td>訪問看護スタッフ</td>
+                </tr>
+                <tr>
+                    <th>雇用形態</th>
+                    <td>正社員</td>
+                </tr>
+                <tr>
+                    <th>試用期間</th>
+                    <td>なし</td>
+                </tr>
+                <tr>
+                    <th>学歴</th>
+                    <td>必須 専修学校以上</td>
+                </tr>
+                <tr>
+                    <th>必要な免許・資格</th>
+                    <td>
+                        看護師：必須<br>
+                        准看護師：必須<br>
+                        上記いずれかの資格を所持で可<br>
+                        普通自動車運転免許：必須（AT限定可）
+                    </td>
+                </tr>
+                <tr>
+                    <th>年齢</th>
+                    <td>制限あり（64歳以下、採用後70歳まで更新）</td>
+                </tr>
+                <tr>
+                    <th>就業場所</th>
+                    <td>〒905-0205 沖縄県国頭郡本部町字山川638-1 グリーンヒルヤマウチ4 101号室</td>
+                </tr>
+                <tr>
+                    <th>訪問エリア</th>
+                    <td>名護市・本部町・今帰仁村</td>
+                </tr>
+                <tr>
+                    <th>交通費</th>
+                    <td>社用車で通勤し在宅訪問（直行直帰可能）</td>
+                </tr>
+                <tr>
+                    <th>給与</th>
+                    <td>263,000円～400,000円</td>
+                </tr>
+                <tr>
+                    <th>昇給</th>
+                    <td>あり</td>
+                </tr>
+                <tr>
+                    <th>賞与</th>
+                    <td>あり 年2回<br>200,000円～480,000円</td>
+                </tr>
+                <tr>
+                    <th>労働時間</th>
+                    <td>8:30～17:30</td>
+                </tr>
+                <tr>
+                    <th>時間外労働</th>
+                    <td>あり 月平均 3時間</td>
+                </tr>
+                <tr>
+                    <th>休日</th>
+                    <td>週休2日制（シフト制）</td>
+                </tr>
+                <tr>
+                    <th>福利厚生</th>
+                    <td>雇用保険 / 労災保険 / 健康保険 / 厚生年金 / 退職金制度あり</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <svg class="footer-wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+        </svg>
+        <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <div style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">合同会社 愛らんど</div>
+            <p>〒905-0203 沖縄県国頭郡本部町謝花68</p>
+            <p>TEL: 0980-43-7117 / FAX: 0980-43-7093</p>
+            <div style="margin-top: 4rem; font-size: 0.8rem; opacity: 0.7;">
+                &copy; 合同会社 愛らんど All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
