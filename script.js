@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const globalNav = document.querySelector('#global-nav');
+
+    if (menuToggle && globalNav) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = globalNav.classList.toggle('is-open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            const label = menuToggle.querySelector('.sr-only');
+            if (label) label.textContent = isOpen ? 'メニューを閉じる' : 'メニューを開く';
+        });
+
+        globalNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                globalNav.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
