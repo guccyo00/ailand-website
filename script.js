@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('motion-ready');
+
+    const progress = document.createElement('div');
+    progress.className = 'scroll-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(progress);
+
+    const updateProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+        progress.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio))})`;
+        document.body.classList.toggle('has-scrolled', window.scrollY > 24);
+    };
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
     const menuToggle = document.querySelector('.menu-toggle');
     const globalNav = document.querySelector('#global-nav');
 
@@ -56,9 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Elements to animate
-    const fadeElements = document.querySelectorAll('.service-card, .pricing table, .staff-card, .access-content');
-    fadeElements.forEach(el => {
+    const fadeElements = document.querySelectorAll(
+        '.guide-card, .blob-card, .news-card, .home-news-item, .partner-panel, .phone-consultation, .status-row, .faq-section details, .contact-guidance, .contact-form-card, .access-map'
+    );
+    fadeElements.forEach((el, index) => {
         el.classList.add('fade-in-element');
+        el.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 90}ms`);
         observer.observe(el);
     });
 });

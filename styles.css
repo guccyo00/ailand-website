@@ -25,6 +25,51 @@ body {
     font-size: 1.15rem;
 }
 
+/* 明るく動きのあるブランド演出 */
+.scroll-progress {
+    position: fixed; inset: 0 0 auto; height: 4px; z-index: 4000;
+    transform: scaleX(0); transform-origin: left center;
+    background: linear-gradient(90deg, #00a8e8, #2bc48a, #ffd23f, #ff7a59, #e83e8c);
+    box-shadow: 0 1px 8px rgba(0,92,168,.35);
+}
+header { transition: height .3s ease, box-shadow .3s ease, background-color .3s ease; }
+.has-scrolled header { background-color: rgba(255,255,255,.98); box-shadow: 0 8px 24px rgba(0,68,110,.12); }
+.logo-section i { animation: rainbow-bob 3s ease-in-out infinite; }
+.hero { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(120deg,#dff7ff,#fff8d9,#ffe8ef,#e6f8ef); background-size: 300% 300%; animation: hero-gradient 12s ease infinite; }
+.hero::before,.hero::after { content:""; position:absolute; z-index:-1; border-radius:50%; filter:blur(2px); opacity:.48; pointer-events:none; }
+.hero::before { width:260px;height:260px;left:-70px;top:130px;background:radial-gradient(circle,#63d8ff,transparent 68%);animation:orb-float 8s ease-in-out infinite; }
+.hero::after { width:330px;height:330px;right:-90px;bottom:25px;background:radial-gradient(circle,#ff9bb6,transparent 68%);animation:orb-float 10s ease-in-out infinite reverse; }
+.hero h1 { background:linear-gradient(90deg,#005ca8,#00a889,#e67e00,#e6005c,#005ca8);background-size:250% auto;color:transparent;-webkit-background-clip:text;background-clip:text;animation:title-shine 8s linear infinite; }
+.hero-illust { animation:hero-rise .9s cubic-bezier(.2,.8,.2,1) both, hero-float 6s ease-in-out 1s infinite; box-shadow:0 24px 55px rgba(0,92,168,.22); }
+.btn-round,.phone-button,.btn-submit { position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,filter .25s ease; }
+.btn-round::after,.phone-button::after,.btn-submit::after { content:"";position:absolute;inset:-100% -45%;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);transform:translateX(-70%);transition:transform .6s ease;pointer-events:none; }
+.btn-round:hover::after,.phone-button:hover::after,.btn-submit:hover::after { transform:translateX(70%); }
+.btn-round:hover,.phone-button:hover,.btn-submit:hover { transform:translateY(-4px) scale(1.02);filter:saturate(1.1); }
+.guide-card,.news-card,.blob-card { transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease; }
+.guide-card:hover,.news-card:hover,.blob-card:hover { transform:translateY(-10px) rotate(-.3deg);box-shadow:0 20px 45px rgba(0,92,168,.18); }
+.guide-card i { transition:transform .4s ease,color .3s ease; }
+.guide-card:hover i { transform:scale(1.18) rotate(-8deg);color:#e6005c; }
+.category { animation:badge-breathe 3.5s ease-in-out infinite; }
+.phone-button,.mobile-phone-bar { animation:soft-pulse 3.2s ease-in-out infinite; }
+.section-title::before { animation:blob-morph 8s ease-in-out infinite; }
+.wavy-divider path,.footer-wave path { animation:wave-color 8s ease-in-out infinite; }
+.fade-in-element { opacity:0;transform:translateY(38px) scale(.97);transition:opacity .75s ease var(--reveal-delay,0ms),transform .75s cubic-bezier(.2,.8,.2,1) var(--reveal-delay,0ms); }
+.fade-in-element.visible { opacity:1;transform:none; }
+@keyframes hero-gradient{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes title-shine{to{background-position:250% center}}
+@keyframes hero-rise{from{opacity:0;transform:translateY(28px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes hero-float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(.4deg)}}
+@keyframes orb-float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(28px,-18px) scale(1.08)}}
+@keyframes rainbow-bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(8deg)}}
+@keyframes soft-pulse{0%,100%{box-shadow:0 8px 18px rgba(0,92,168,.12)}50%{box-shadow:0 10px 30px rgba(0,92,168,.28)}}
+@keyframes badge-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes blob-morph{0%,100%{border-radius:50% 40% 60% 30%/30% 60% 40% 70%;transform:translate(-50%,-50%) rotate(0)}50%{border-radius:35% 65% 40% 60%/55% 35% 65% 45%;transform:translate(-50%,-50%) rotate(5deg)}}
+@keyframes wave-color{0%,100%{fill:#005ca8}50%{fill:#00a889}}
+@media (prefers-reduced-motion: reduce) {
+    *,*::before,*::after { animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important; }
+    .fade-in-element { opacity:1;transform:none; }
+}
+
 .contact-guidance {
     max-width: 900px; margin: 0 auto 28px; padding: 24px 28px;
     background: #edf8ff; border-left: 5px solid var(--primary-blue); border-radius: 16px;
