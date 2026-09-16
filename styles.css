@@ -34,7 +34,7 @@ body {
 }
 header { transition: height .3s ease, box-shadow .3s ease, background-color .3s ease; }
 .has-scrolled header { background-color: rgba(255,255,255,.98); box-shadow: 0 8px 24px rgba(0,68,110,.12); }
-.logo-section i { animation: rainbow-bob 3s ease-in-out infinite; }
+.brand-logo { width: 58px; height: 58px; object-fit: contain; flex: 0 0 auto; margin-right: 10px; animation: rainbow-bob 3s ease-in-out infinite; }
 .hero { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(120deg,#dff7ff,#fff8d9,#ffe8ef,#e6f8ef); background-size: 300% 300%; animation: hero-gradient 12s ease infinite; }
 .hero::before,.hero::after { content:""; position:absolute; z-index:-1; border-radius:50%; filter:blur(2px); opacity:.48; pointer-events:none; }
 .hero::before { width:260px;height:260px;left:-70px;top:130px;background:radial-gradient(circle,#63d8ff,transparent 68%);animation:orb-float 8s ease-in-out infinite; }
@@ -239,7 +239,7 @@ header {
 .cta-block:hover { opacity: 0.9; }
 
 .cta-block span { font-size: 0.7rem; margin-bottom: 2px; }
-.cta-block strong { font-size: 1.1rem; }
+.cta-block strong { font-size: 1.1rem; white-space: nowrap; }
 
 /* Connecting Path Line */
 .path-line {
@@ -320,6 +320,13 @@ header {
 .btn-round:active {
     transform: translateY(4px);
     box-shadow: 0 4px 0 #b3000e;
+}
+
+.hero-illust img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
 }
 
 .content-container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
