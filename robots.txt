@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guccyo00.github.io/ailand-website/sitemap.xml
