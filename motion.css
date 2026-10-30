@@ -128,3 +128,118 @@
     .hero-slider .slide { transition: none; }
     .to-top { transition: none; }
 }
+
+/* ---------- 6. 「拡大」マーク ---------- */
+.zoom-wrap { position: relative; display: block; overflow: hidden; }
+.zoom-wrap > img { display: block; }
+.zoom-badge {
+    position: absolute; right: 10px; bottom: 10px; z-index: 1;
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 6px 12px 6px 9px; border-radius: 999px;
+    background: rgba(0,48,92,.82); color: #fff;
+    font-size: 1rem; font-weight: 700; line-height: 1; cursor: zoom-in;
+    box-shadow: 0 3px 10px rgba(0,0,0,.25);
+}
+
+/* ---------- 7. 文字の大きさ切り替え ---------- */
+html.fs-l { font-size: 112.5%; }
+html.fs-xl { font-size: 125%; }
+.font-switch {
+    position: fixed; left: 16px; bottom: 24px; z-index: 2400;
+    display: flex; align-items: center; gap: 4px; padding: 6px 6px 6px 12px;
+    background: #fff; border: 2px solid var(--primary-blue); border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.18);
+    font-size: 16px; /* 切り替えボタン自体の大きさは固定 */
+}
+.font-switch-label { font-weight: 900; color: var(--primary-blue); margin-right: 4px; }
+.fs-btn {
+    min-width: 48px; height: 44px; padding: 0 10px; border: none; border-radius: 999px;
+    background: #eef6fc; color: var(--primary-blue); font-weight: 900; cursor: pointer;
+}
+.fs-btn-m { font-size: 15px; }
+.fs-btn-l { font-size: 18px; }
+.fs-btn-xl { font-size: 21px; }
+.fs-btn[aria-pressed="true"] { background: var(--primary-blue); color: #fff; }
+/* 文字を大きくしたときは、PCでもメニューを「≡」にまとめて崩れを防ぐ */
+html.fs-l .header-container, html.fs-xl .header-container { height: 72px; flex-wrap: wrap; align-items: center; }
+html.fs-l .menu-toggle, html.fs-xl .menu-toggle { display: block; }
+html.fs-l .nav-section, html.fs-xl .nav-section { display: none; order: 3; width: 100%; background: var(--white); border-top: 1px solid #ddd; box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+html.fs-l .nav-section.is-open, html.fs-xl .nav-section.is-open { display: block; }
+html.fs-l .nav-section ul, html.fs-xl .nav-section ul { display: block; margin: 0; padding: .5rem 1rem 1rem; }
+html.fs-l .nav-section ul li a, html.fs-xl .nav-section ul li a { display: block; padding: .7rem .5rem; }
+html.fs-l .header-ctas, html.fs-xl .header-ctas { display: none; }
+html.fs-l body, html.fs-xl body { padding-bottom: 68px; }
+html.fs-l .mobile-phone-bar, html.fs-xl .mobile-phone-bar {
+    position: fixed; z-index: 2500; left: 0; right: 0; bottom: 0;
+    display: flex; align-items: center; justify-content: center; gap: .55rem;
+    min-height: 60px; padding: .55rem 1rem; background: var(--primary-blue);
+    color: var(--white); text-decoration: none; box-shadow: 0 -4px 14px rgba(0,0,0,.18);
+}
+html.fs-l .to-top, html.fs-xl .to-top { bottom: 84px; }
+html.fs-l .font-switch, html.fs-xl .font-switch { bottom: 84px; }
+
+/* ---------- 8. ご利用までの流れ ---------- */
+.step-flow { position: relative; }
+.step-line {
+    position: absolute; width: 6px; border-radius: 3px; z-index: 0;
+    background: linear-gradient(var(--accent-red), #f39aa1);
+    transform-origin: top; transform: scaleY(1);
+}
+.step-circle { position: relative; z-index: 1; box-shadow: 0 0 0 6px #fff; }
+.step-flow.step-animate .step-line { transform: scaleY(0); transition: transform 1.4s ease .2s; }
+.step-flow.step-animate .step-row { opacity: 0; transform: translateX(-24px); transition: opacity .6s ease var(--step-delay), transform .6s ease var(--step-delay); }
+.step-flow.step-animate.is-shown .step-line { transform: scaleY(1); }
+.step-flow.step-animate.is-shown .step-row { opacity: 1; transform: none; }
+
+@media (max-width: 1400px) {
+    .font-switch { bottom: 84px; }
+}
+@media (max-width: 768px) {
+    /* スマホでは「上へ」ボタンと並ぶよう左下に小さめに */
+    .font-switch { left: 10px; padding: 4px 4px 4px 10px; }
+    .fs-btn { min-width: 44px; height: 42px; padding: 0 8px; }
+}
+
+/* ---------- 文字の大きさ：表示場所の切り替え ---------- */
+/* PC（1401px以上・標準サイズ）：左下の切り替え欄。それ以外：ヘッダーの「文字」ボタン */
+.fs-toggle, .fs-panel { display: none; }
+@media (max-width: 1400px) {
+    .font-switch { display: none; }
+    .fs-toggle { display: inline-flex; }
+}
+html.fs-l .font-switch, html.fs-xl .font-switch { display: none; }
+html.fs-l .fs-toggle, html.fs-xl .fs-toggle { display: inline-flex; }
+.fs-toggle {
+    align-self: center; margin-left: auto; margin-right: .5rem;
+    flex-direction: column; align-items: center; justify-content: center;
+    width: 52px; height: 48px; border: 2px solid var(--primary-blue); border-radius: 12px;
+    background: #fff; color: var(--primary-blue); cursor: pointer; line-height: 1; padding: 0;
+    font-size: 16px; /* ボタン自体の大きさは固定 */
+}
+.fs-toggle-aa { font-size: 18px; font-weight: 900; }
+.fs-toggle-text { font-size: 12px; font-weight: 700; margin-top: 2px; }
+.fs-toggle[aria-expanded="true"] { background: var(--primary-blue); color: #fff; }
+@media (max-width: 1400px) { .menu-toggle { margin-left: 0; } }
+html.fs-l .menu-toggle, html.fs-xl .menu-toggle { margin-left: 0; }
+.fs-panel.is-open {
+    display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+    position: absolute; right: 12px; top: calc(100% + 8px); z-index: 2100;
+    padding: 12px; background: #fff; border: 2px solid var(--primary-blue); border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.2); font-size: 16px;
+}
+.fs-panel-title { width: 100%; margin: 0 0 4px; font-weight: 900; color: var(--primary-blue); font-size: 16px; }
+.fs-panel .fs-btn { min-width: 64px; height: 50px; }
+
+/* 文字を大きくしても、ヘッダーと見出しが画面からはみ出さないように */
+@media (max-width: 768px) {
+    html.fs-l .logo-section, html.fs-xl .logo-section { font-size: 19px; padding: 0 .75rem; }
+    html.fs-xl .hero h1 { font-size: 1.75rem; }
+}
+@media (max-width: 420px) {
+    .brand-logo { width: 44px; height: 44px; margin-right: 8px; }
+    .logo-section { padding: 0 .75rem; }
+}
+
+/* 特大のとき、区切り指定した見出しが画面幅を超えないように */
+.nw { max-width: 100%; }
+.grid-2 > * { min-width: 0; }
