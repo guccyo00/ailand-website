@@ -38,7 +38,7 @@
                     <li><a href="care.html">訪問介護</a></li>
                     <li><a href="senior.html">老人ホーム</a></li>
                     <li><a href="recruit.html">採用情報</a></li>
-                    <li><a href="updates.html">お知らせ</a></li>
+                    <li hidden><!-- お知らせ：記事ができたら hidden を外す --><a href="updates.html">お知らせ</a></li>
                 </ul>
             </nav>
             <div class="header-ctas">
@@ -57,9 +57,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container" style="max-width: 1000px; margin: 0 auto;">
-            <h1>あなたとともに、<br>やんばるで安心の暮らしを</h1>
+            <h1>あなたとともに、<br>やんばるで<span class="nw">安心の暮らしを</span></h1>
             <div class="hero-illust">
-                <img src="images/hero-rainbow-clean.png" alt="虹と白い鳩が彩る海と緑の風景" width="1926" height="816">
+                <img src="images/hero-rainbow.jpg" alt="虹と白い鳩が彩る海と緑の風景" width="1926" height="816">
             </div>
             <p style="font-size: 1.4rem; font-weight: 700; color: #444;">ひとりひとりの笑顔を支える、心と手の届くケアを。</p>
             <a href="about.html" class="btn-round" style="margin-top: 3rem;">愛らんどについて詳しく</a>
@@ -88,10 +88,11 @@
         </div>
     </section>
 
-    <section class="home-news-section" aria-labelledby="home-news-title">
+    <!-- お知らせ欄：記事ができたら hidden を外す -->
+    <section class="home-news-section" aria-labelledby="home-news-title" hidden>
         <div class="container content-container">
             <div class="home-news-heading">
-                <div><p class="eyebrow">NEWS &amp; INFORMATION</p><h2 id="home-news-title">愛らんどからのお知らせ</h2></div>
+                <div><p class="eyebrow">NEWS &amp; INFORMATION</p><h2 id="home-news-title">愛らんどからの<span class="nw">お知らせ</span></h2></div>
                 <a class="text-link" href="updates.html">一覧を見る <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
             </div>
             <div class="home-news-list">
@@ -130,19 +131,19 @@
                     <img src="images/exterior.jpg" alt="訪問看護" style="width: 100%; border-radius: 20px; margin-bottom: 1.5rem;">
                     <h3 style="margin-bottom: 1rem;">訪問看護</h3>
                     <p>看護師が本部町や周辺地域のご自宅に訪問し、日々の健康管理や医療処置をサポートします。</p>
-                    <a href="homenurse.html" class="btn-round" style="margin-top: 1.5rem; font-size: 0.9rem;">詳細はこちら</a>
+                    <a href="homenurse.html" class="btn-round" style="margin-top: 1.5rem; font-size: 1.05rem;">詳細はこちら</a>
                 </div>
                 <div class="blob-card">
                     <img src="images/cleaning.jpg" alt="訪問介護" style="width: 100%; border-radius: 20px; margin-bottom: 1.5rem;">
                     <h3 style="margin-bottom: 1rem;">訪問介護</h3>
                     <p>日常生活に必要な支援を心を込めてお届けします。身体介護や生活援助など細やかなサービスを提供します。</p>
-                    <a href="care.html" class="btn-round" style="margin-top: 1.5rem; font-size: 0.9rem;">詳細はこちら</a>
+                    <a href="care.html" class="btn-round" style="margin-top: 1.5rem; font-size: 1.05rem;">詳細はこちら</a>
                 </div>
                 <div class="blob-card">
                     <img src="images/ocean.jpg" alt="有料老人ホーム" style="width: 100%; border-radius: 20px; margin-bottom: 1.5rem;">
                     <h3 style="margin-bottom: 1rem;">有料老人ホーム</h3>
                     <p>個室を中心に一部相部屋を備えた、定員9名の家庭的な環境で、24時間体制の安心な暮らしを提供します。</p>
-                    <a href="senior.html" class="btn-round" style="margin-top: 1.5rem; font-size: 0.9rem;">詳細はこちら</a>
+                    <a href="senior.html" class="btn-round" style="margin-top: 1.5rem; font-size: 1.05rem;">詳細はこちら</a>
                 </div>
             </div>
         </div>
@@ -172,12 +173,12 @@
             <div class="partner-panel">
                 <div>
                     <span class="support-label">ケアマネジャー・医療機関・地域包括支援センターの皆さまへ</span>
-                    <h2 id="partner-title">地域連携のご相談を承ります</h2>
+                    <h2 id="partner-title">地域連携の<span class="nw">ご相談を承ります</span></h2>
                     <p>訪問看護・訪問介護・入居に関するご相談は、対象地域やご希望の支援内容を伺ったうえで担当者が対応します。まずは法人窓口へお電話ください。</p>
                 </div>
                 <div class="partner-contact">
                     <a href="tel:0980437117" class="phone-button"><i class="fa-solid fa-phone" aria-hidden="true"></i> 0980-43-7117</a>
-                    <span>FAX：0980-43-7093</span>
+                    <span>FAX：<span class="tel-nw">0980-43-7093</span></span>
                 </div>
             </div>
         </div>
@@ -192,16 +193,16 @@
             <div class="blob-card">
                 <div class="grid-2">
                     <div>
-                        <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem; font-size: 1.8rem;">訪問看護ステーション あいらんど</h3>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem; font-size: 1.8rem;"><span class="nw">訪問看護ステーション</span> <span class="nw">あいらんど</span></h3>
                         <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-building" style="color: var(--primary-blue); width: 25px;"></i> 合同会社 愛らんど</p>
-                        <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-location-dot" style="color: var(--primary-blue); width: 25px;"></i> 〒905-0203<br><span style="padding-left: 25px;">沖縄県国頭郡本部町謝花68</span></p>
+                        <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-location-dot" style="color: var(--primary-blue); width: 25px;"></i> <span class="tel-nw">〒905-0203</span><br><span style="padding-left: 25px;">沖縄県国頭郡本部町謝花68</span></p>
                         <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-map-location-dot" style="color: var(--primary-blue); width: 25px;"></i> <strong>訪問エリア：</strong>本部町、今帰仁、名護市以北</p>
-                        <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-phone" style="color: var(--primary-blue); width: 25px;"></i> TEL: 0980-43-7117</p>
-                        <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-fax" style="color: var(--primary-blue); width: 25px;"></i> FAX: 0980-43-7093</p>
+                        <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-phone" style="color: var(--primary-blue); width: 25px;"></i> TEL: <span class="tel-nw">0980-43-7117</span></p>
+                        <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-fax" style="color: var(--primary-blue); width: 25px;"></i> FAX: <span class="tel-nw">0980-43-7093</span></p>
                     </div>
                     <div class="access-map" style="position: relative;">
                         <iframe src="https://www.google.com/maps?q=沖縄県国頭郡本部町謝花68&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width: 100%; height: 100%; border: none; border-radius: 20px;"></iframe>
-                        <a href="https://maps.app.goo.gl/3Eu3qzjx5qtb6wbb9" target="_blank" style="position: absolute; top: 20px; left: 20px; background: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; color: #444; font-size: 0.85rem; font-weight: bold; border: 1px solid #ddd; display: flex; align-items: center; gap: 5px;">
+                        <a href="https://maps.app.goo.gl/3Eu3qzjx5qtb6wbb9" target="_blank" style="position: absolute; top: 20px; left: 20px; background: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; color: #444; font-size: 1rem; font-weight: bold; border: 1px solid #ddd; display: flex; align-items: center; gap: 5px;">
                             マップで開く <i class="fa-solid fa-up-right-from-square"></i>
                         </a>
                     </div>
@@ -217,9 +218,9 @@
         </svg>
         <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
             <div style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">合同会社 愛らんど</div>
-            <p>〒905-0203 沖縄県国頭郡本部町謝花68</p>
-            <p>TEL: 0980-43-7117 / FAX: 0980-43-7093</p>
-            <div style="margin-top: 4rem; font-size: 0.8rem; opacity: 0.7;">
+            <p><span class="tel-nw">〒905-0203</span> 沖縄県国頭郡本部町謝花68</p>
+            <p>TEL: <span class="tel-nw">0980-43-7117</span> / FAX: <span class="tel-nw">0980-43-7093</span></p>
+            <div style="margin-top: 4rem; font-size: 1rem; opacity: 0.7;">
                 &copy; 合同会社 愛らんど All Rights Reserved.
             </div>
         </div>
