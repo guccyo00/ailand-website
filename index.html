@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="motion.css">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Organization","name":"合同会社 愛らんど","url":"https://www.ailand.okinawa/","telephone":"0980-43-7117","address":{"@type":"PostalAddress","postalCode":"905-0203","addressRegion":"沖縄県","addressLocality":"国頭郡本部町","streetAddress":"謝花68"},"areaServed":["本部町","今帰仁村","名護市以北"]}
     </script>
@@ -59,8 +60,13 @@
     <section class="hero">
         <div class="container" style="max-width: 1000px; margin: 0 auto;">
             <h1>あなたとともに、<br>やんばるで<span class="nw">安心の暮らしを</span></h1>
-            <div class="hero-illust">
-                <img src="images/hero-rainbow.jpg" alt="虹と白い鳩が彩る海と緑の風景" width="1926" height="816">
+            <div class="hero-illust hero-slider" role="region" aria-roledescription="スライドショー" aria-label="愛らんどの風景">
+                <img class="slide is-active" src="images/hero-rainbow.jpg" alt="虹と白い鳩が彩る海と緑の風景" width="1926" height="816">
+                <img class="slide" src="images/slide-rainbow.jpg" alt="本部町の海にかかる虹" loading="lazy">
+                <img class="slide" src="images/slide-ocean.jpg" alt="やんばるの青い海と緑" loading="lazy">
+                <img class="slide" src="images/slide-exterior.jpg" alt="愛らんどの建物外観" loading="lazy">
+                <button type="button" class="slider-btn prev" aria-label="前の写真">‹</button>
+                <button type="button" class="slider-btn next" aria-label="次の写真">›</button>
             </div>
             <p style="font-size: 1.4rem; font-weight: 700; color: #444;">ひとりひとりの笑顔を支える、心と手の届くケアを。</p>
             <a href="about.html" class="btn-round" style="margin-top: 3rem;">愛らんどについて詳しく</a>
@@ -71,6 +77,14 @@
     <svg class="wavy-divider" viewBox="0 0 1440 100" preserveAspectRatio="none">
         <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
     </svg>
+
+    <section class="stats-section" aria-label="数字で見る愛らんど">
+        <div class="stats-grid">
+            <div class="stat"><span class="stat-label">提供しているサービス</span><span class="stat-value"><span class="num" data-count="3">3</span><span class="unit">種類</span></span><span class="stat-note">看護・介護・老人ホーム</span></div>
+            <div class="stat"><span class="stat-label">老人ホームの見守り</span><span class="stat-value"><span class="num" data-count="24">24</span><span class="unit">時間</span></span><span class="stat-note">日中も夜間も安心の体制</span></div>
+            <div class="stat"><span class="stat-label">老人ホームの定員</span><span class="stat-value"><span class="num" data-count="9">9</span><span class="unit">名</span></span><span class="stat-note">家庭的な少人数制</span></div>
+        </div>
+    </section>
 
     <section class="guide-section" aria-labelledby="guide-title">
         <div class="container content-container">
@@ -228,5 +242,6 @@
     </footer>
     <a class="mobile-phone-bar" href="tel:0980437117"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>電話で相談</span><strong>0980-43-7117</strong></a>
     <script src="script.js"></script>
+    <script src="motion.js"></script>
 </body>
 </html>
