@@ -786,3 +786,12 @@ h1, h2, h3, h4, summary, .btn-round { word-break: auto-phrase; }
     div:has(> div[style*="width: 60px"]) { gap: 1rem !important; }
     div[style*="min-width: 300px"] { min-width: 0 !important; flex-basis: 100% !important; }
 }
+
+/* お知らせ：2列カード、動画、追加写真 */
+.news-grid.news-grid-2 { grid-template-columns: repeat(2, 1fr); align-items: start; }
+.status-section h2 { color: #fff; }
+.news-video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.news-photos { margin: 4px 0 8px; }
+.news-photos img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; }
+.news-card-body small { display: block; }
+@media (max-width: 850px) { .news-grid.news-grid-2 { grid-template-columns: 1fr; } }
