@@ -127,7 +127,7 @@ h1, h2, h3 {
     position: relative;
 }
 
-.section-title h2 {
+.section-title h1, .section-title h2 {
     font-size: 2.5rem;
     display: inline-block;
     position: relative;
@@ -393,7 +393,7 @@ footer {
     .hero-illust { margin: 2rem auto; border-radius: 48px 12px 48px 12px; box-shadow: 10px 10px 0 var(--accent-red); }
     .grid-2 { grid-template-columns: 1fr; }
     body { padding-bottom: 68px; }
-    .section-title h2 { font-size: 2rem; }
+    .section-title h1, .section-title h2 { font-size: 2rem; }
     .guide-section, .partner-section { padding: 60px 0; }
     .guide-grid { grid-template-columns: 1fr; }
     .guide-card { min-height: auto; }
