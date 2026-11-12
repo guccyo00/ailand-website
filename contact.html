@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow"><!-- 仮公開中：正式公開時にこの行を削除 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせ | 合同会社 愛らんど</title>
     <meta name="description" content="合同会社 愛らんどへのお問い合わせ。訪問看護、訪問介護、有料老人ホーム、採用についてご相談いただけます。">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://ailand-happy.jp/contact.html">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./styles.css">
@@ -61,11 +61,7 @@
             <p>サービス利用・入居・採用など、ご相談内容をお知らせください。通常のご相談はフォームから、緊急の場合はお電話でご連絡ください。</p>
             <a href="tel:0980437117"><i class="fa-solid fa-phone"></i> 0980-43-7117</a>
         </div>
-        <form id="contactForm" class="contact-form-card" name="contact" action="https://formsubmit.co/ailand.gyou@gmail.com" method="POST" novalidate>
-            <input type="hidden" name="_subject" value="【愛らんど公式サイト】新しいお問い合わせ">
-            <input type="hidden" name="_next" value="https://guccyo00.github.io/ailand-website/thanks.html">
-            <input type="hidden" name="_url" value="https://guccyo00.github.io/ailand-website/contact.html">
-            <input type="hidden" name="_template" value="table">
+        <form id="contactForm" class="contact-form-card" name="contact" action="/contact.php" method="POST" novalidate>
             <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
             <!-- Row 1: お問い合わせ項目 (Aligned Top due to radios group) -->
             <div class="form-row align-top">
@@ -111,7 +107,7 @@
                     <label class="form-label-text" for="nameInput">お名前</label>
                 </div>
                 <div class="form-input-container">
-                    <input type="text" id="nameInput" name="name" class="form-input" placeholder="例：山田 太郎" required>
+                    <input type="text" id="nameInput" name="name" class="form-input" maxlength="100" placeholder="例：山田 太郎" required>
                 </div>
             </div>
 
@@ -122,7 +118,7 @@
                     <label class="form-label-text" for="kanaInput">フリガナ</label>
                 </div>
                 <div class="form-input-container">
-                    <input type="text" id="kanaInput" name="kana" class="form-input" placeholder="例：ヤマダ タロウ" required>
+                    <input type="text" id="kanaInput" name="kana" class="form-input" maxlength="100" placeholder="例：ヤマダ タロウ" required>
                 </div>
             </div>
 
@@ -133,7 +129,7 @@
                     <label class="form-label-text" for="emailInput">メールアドレス</label>
                 </div>
                 <div class="form-input-container">
-                    <input type="email" id="emailInput" name="email" class="form-input" placeholder="例：info@sample.com" required>
+                    <input type="email" id="emailInput" name="email" class="form-input" maxlength="254" placeholder="例：info@sample.com" required>
                 </div>
             </div>
 
@@ -144,7 +140,7 @@
                     <label class="form-label-text" for="telInput">電話番号</label>
                 </div>
                 <div class="form-input-container">
-                    <input type="tel" id="telInput" name="tel" class="form-input" placeholder="例：012-345-6789" required>
+                    <input type="tel" id="telInput" name="tel" class="form-input" maxlength="30" placeholder="例：012-345-6789" required>
                 </div>
             </div>
 
@@ -155,17 +151,17 @@
                     <label class="form-label-text" for="messageInput">お問い合わせ内容</label>
                 </div>
                 <div class="form-input-container">
-                    <textarea id="messageInput" name="message" class="form-input form-textarea" maxlength="1500" placeholder="ご質問などをご記入ください。病名・服薬内容などの詳しい医療情報は入力しないでください。" required></textarea>
-                    <small class="field-help"><span id="messageCount">0</span>/1500文字</small>
+                    <textarea id="messageInput" name="message" class="form-input form-textarea" maxlength="2000" placeholder="ご質問などをご記入ください。病名・服薬内容などの詳しい医療情報は入力しないでください。" required></textarea>
+                    <small class="field-help"><span id="messageCount">0</span>/2000文字</small>
                 </div>
             </div>
 
             <div class="privacy-box">
                 <h3>個人情報の取り扱いについて</h3>
-                <p>入力いただいた情報は、お問い合わせへの回答と必要なご連絡のために使用します。詳しい病状、服薬内容、個人番号などの機微な情報は入力しないでください。</p>
+                <p>入力いただいた情報は、お問い合わせへの回答と必要なご連絡のために使用します。送信内容は当社のサーバーから担当者の受信用メール（Gmail）へ送信します。フォームの送信処理では入力内容をファイルやデータベースへ保存しません。詳しい病状、服薬内容、個人番号などの機微な情報は入力しないでください。</p>
                 <label class="consent-label"><input type="checkbox" id="privacyConsent" name="privacy_consent" required> <a href="about.html#privacy" target="_blank">個人情報の取り扱い</a>に同意する</label>
             </div>
-            <div class="honeypot" aria-hidden="true"><label for="websiteInput">この欄は空欄のままにしてください</label><input id="websiteInput" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+            <div class="honeypot" aria-hidden="true"><label for="websiteInput">この欄は空欄のままにしてください</label><input id="websiteInput" type="text" name="website" tabindex="-1" autocomplete="off"></div>
 
             <!-- Submit Button -->
             <div class="form-submit-container">
